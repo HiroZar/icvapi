@@ -28,6 +28,9 @@ def consejos(estado):
         return "Es importante enfocarse más en las áreas donde hay dificultades. Considera trabajar con un tutor."
     elif estado == 'Permanente':
         return "Deberías mejorar en varias áreas para poder pasar al siguiente grado. Busca ayuda adicional."
+@app.get("/")
+def read_root():
+    return {"message": "API para predecir estado de promoción de alumnos. Usa /predecir/ para realizar predicciones."}
 
 @app.post("/predecir/")
 def predecir_rendimiento(notas: Notas):
